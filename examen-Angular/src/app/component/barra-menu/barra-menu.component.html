@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand h1">La Bodega</span>
+        <div class="row">
+          <div class="col-sm">
+            <a [routerLink]="['/tienda']"><i class="fas fa-home mx-3"></i></a>
+            <a [routerLink]="['/carrito']"><i class="fas fa-cart-plus mx-3"> <span class="badge badge-light" >{{cantidad}}</span></i></a>
+            <a [routerLink]="['']"><i class="fas fa-sign-out-alt mx-3"></i></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<barra-menu></barra-menu>
+<div class="container">
+  <div class="row" >
+        <div class="col-8 mt-5 ">
+          <div class="col-12 mt-3" *ngFor="let item of carrito">
+              <div class="row">
+                  <div class="col-5">
+                      <img class="card-img-top" [src]="'../assets/img/' + item.imagen">
+                    </div>
+                    <div class="col-7">
+                      <h5><span> {{item.nomProducto}}</span></h5>
+                      <h6><span>Unidades: {{item.cantidadProducto}}</span></h6>
+                      <h6><span>Subtotal: ${{item.subTotal}}</span></h6>
+                    </div>
+              </div>
+          </div>
+        </div>
+        
+        <div class="col-4 mt-5">
+            <div class="card">
+                <div class="card-header">
+                 Factura de pago
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Total a pagar</h5>
+                  <p class="card-text">Pago:{{total}} </p>
+                  <a (click)="pagar()" class="btn btn-primary">Pagar!!</a>
+                </div>
+              </div>
+        </div>
+    </div>   
+  </div>

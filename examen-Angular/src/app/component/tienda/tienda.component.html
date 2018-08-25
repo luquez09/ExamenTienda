@@ -1,0 +1,24 @@
+<barra-menu></barra-menu>
+<div class="container">
+  <div class="row">
+        <div class="card bg-light mx-1 mt-1" style="width: 16rem;" *ngFor="let item of productos">
+            <img class="card-img-top" [src]="'../assets/img/' + item.imagen">
+            <div class="card-body">
+              <h5 class="card-title">{{item.nombre}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Precio: ${{item.precio}} </li>
+              <li class="list-group-item">Cantidad: {{item.cantidad}} </li>
+            </ul>
+            <div class="card-body">
+                <button  (click)="aggCarrito(item, inputNumero.value)" type="button" class="btn btn-info btn-sm"  [routerLink]="['/detalles']" [queryParams]="
+                {'nombre':item.nombre, 
+                'precio':item.precio, 
+                'cantidad':item.cantidad, 
+                'img':item.imagen}">Ver mas</button>
+                <button  (click)="aggCarrito(item, inputNumero.value)" type="button" class="btn btn-primary btn-sm mx-2">Agregar</button>
+                <input class="col-sm-3 mx-1"  type="number" name="cantidades" value="1" min="1" max="{{item.cantidad}}" #inputNumero>
+            </div>
+          </div>
+  </div>
+</div>
